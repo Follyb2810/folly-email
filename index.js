@@ -30,7 +30,7 @@ app.post('/email', async (req, res) => {
     const newEmail = new emailModel({ email });
     await newEmail.save();
 
-    res.status(200).json({ message: `Thank you for providing your email! We truly appreciate your interest in our services. Your email has been successfully submitted, and we'll make sure to keep you informed about our latest updates, offers, and news.` });
+    res.status(200).json({ message:"Thank you for providing your email!." });
   } catch (error) {
     console.error('Please Provide a valid Email:', error);
     res.status(500).json({ message: 'Error saving email' });
