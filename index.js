@@ -1,7 +1,9 @@
 const express = require('express');
 const env = require('dotenv');
+const cors = require('cors')
 const emailModel = require('./model/EmailModel');
 const connectDB = require('./Config/db');
+
 
 env.config();
 const app = express();
