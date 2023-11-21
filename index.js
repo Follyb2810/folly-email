@@ -22,12 +22,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/email', async (req, res) => {
-  const { email } = req.body;
+  const { email,name,message } = req.body;
   if (!isValidEmail(email)) {
     return res.status(400).json({ message: 'Invalid email format' });
   }
   try {
-    const newEmail = new emailModel({ email });
+    const newEmail = new emailModel({ email,name,message });
     await newEmail.save();
 
     res.status(200).json({ message:"Thank you for providing your email!." });
