@@ -5,7 +5,8 @@ const EmailSchema = mongoose.Schema({
     name:{
         type:String,
         require:[true,"your name is require"],
-        unique:true
+        unique:true,
+        trim:true
     },
     email:{
         type:String,
@@ -14,7 +15,8 @@ const EmailSchema = mongoose.Schema({
     message:{
         type:String,
         require:[true,"you are require to input message"],
-        min: [6, 'Must be at least 6, got {VALUE}']
+        min: [6, 'Must be at least 6 character'],
+        trim:true
     }
 })
 
