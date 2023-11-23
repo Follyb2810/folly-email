@@ -27,7 +27,7 @@ app.post('/email', async (req, res) => {
     return res.status(400).json({ message: 'Invalid email format' });
   }
   try {
-    if(!email || !name || !message) return res.status(401).json({message:'all iput are require'})
+    if(!email || !name || !message) return res.status(401).json({message:'Please, all input are require'})
     const newEmail = new emailModel({ email,name,message });
 
     await newEmail.save();
